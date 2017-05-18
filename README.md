@@ -4,7 +4,7 @@
 sudo npm install scion-cli -g
 ```
 
-安装完成后，添加到`scion`模板目录：
+安装完成后，添加到`scion`模板目录：
 ```
 sudo scion a
 
@@ -41,3 +41,20 @@ npm start
 ```
 
 浏览器会自动打开，并进入到`http://0.0.0.0:1337`。若需要手机浏览，首先安装`WeexPlayGround`，然后改`host`为**你的IP地址**，最后用`WeexPlayGround`扫描二维码即可进行预览。
+
+# 优化更新
+- 基于官方`weex-toolkit`模板
+- 修复官方模板`weex-vue-render`路径引用错误的问题
+- 使用`webpack2`
+- 添加`less`预处理器
+- 添加`eslint`校验以及使用`standar`标准规则
+- 整合`webpack --watch`与`webpack-dev-server`命令，使用时运行一条`npm start`命令即可启动应用
+- 添加`alias`，以后引用路径可以参照下表简化成`~`形式：
+  ```
+  '~src': resolve('src'),
+  '~components': resolve('src/components'),
+  '~pages': resolve('src/pages'),
+  '~assets': resolve('src/assets'),
+  '~store': resolve('src/store'),
+  '~static': resolve('src/static')
+  ```
